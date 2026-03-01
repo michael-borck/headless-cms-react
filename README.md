@@ -1,5 +1,9 @@
 # Headless WordPress CMS with React
 
+<!-- BADGES:START -->
+[![api-integration](https://img.shields.io/badge/-api--integration-blue?style=flat-square)](https://github.com/topics/api-integration) [![blog-application](https://img.shields.io/badge/-blog--application-blue?style=flat-square)](https://github.com/topics/blog-application) [![content-management](https://img.shields.io/badge/-content--management-blue?style=flat-square)](https://github.com/topics/content-management) [![headless-cms](https://img.shields.io/badge/-headless--cms-blue?style=flat-square)](https://github.com/topics/headless-cms) [![javascript](https://img.shields.io/badge/-javascript-f7df1e?style=flat-square)](https://github.com/topics/javascript) [![react](https://img.shields.io/badge/-react-61dafb?style=flat-square)](https://github.com/topics/react) [![react-hooks](https://img.shields.io/badge/-react--hooks-blue?style=flat-square)](https://github.com/topics/react-hooks) [![react-router](https://img.shields.io/badge/-react--router-blue?style=flat-square)](https://github.com/topics/react-router) [![web-development](https://img.shields.io/badge/-web--development-blue?style=flat-square)](https://github.com/topics/web-development) [![wordpress-api](https://img.shields.io/badge/-wordpress--api-blue?style=flat-square)](https://github.com/topics/wordpress-api)
+<!-- BADGES:END -->
+
 A React-based blog application that builds on headless CMS concepts using components, hooks, and React Router with WordPress as the backend.
 
 ## Overview
