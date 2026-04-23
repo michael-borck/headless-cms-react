@@ -16,11 +16,25 @@ A Vite + React starter template for ISYS3004 Assessment 2. Provides the project 
 | `src/components/Footer.jsx` | 🔧 Update | Update with your site name |
 | `src/index.css` | 🔧 Your design | Base styles with CSS variables — customise |
 
+> **This is a template repository for ISYS3004 Assessment 2.**
+> For submission requirements, marking criteria, and the Critical Incident Portfolio format,
+> refer to the assignment specification on the unit LMS — not this README.
+
+---
+
 ## Getting started
 
-### 1. Use this template
+### 1. Use this template — follow these steps exactly
 
-Click **"Use this template"** on GitHub to create your own private repository. Do not fork — use the template button so you get a clean history.
+> ⚠️ **Do not fork. Do not clone this repository directly.**
+> Forking or cloning the template puts your work in the wrong place and your instructor will not be able to access your submission.
+
+1. Click the green **"Use this template"** button at the top of this page on GitHub
+2. Select **"Create a new repository"**
+3. Set visibility to **Private**
+4. Name your repository (e.g. `isys3004-a2`)
+5. Click **"Create repository"**
+6. Clone **your new repository** to your computer — not this one
 
 ### 2. Clone and install
 
