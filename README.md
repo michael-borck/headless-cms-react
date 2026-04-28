@@ -24,7 +24,7 @@ A Vite + React starter template for ISYS3004 Assessment 2. Provides the project 
 
 ## Getting started
 
-### 1. Use this template — follow these steps exactly
+### Step 1 — Create your repository from this template
 
 > ⚠️ **Do not fork. Do not clone this repository directly.**
 > Forking or cloning the template puts your work in the wrong place and your instructor will not be able to access your submission.
@@ -34,9 +34,10 @@ A Vite + React starter template for ISYS3004 Assessment 2. Provides the project 
 3. Set visibility to **Private**
 4. Name your repository (e.g. `isys3004-a2`)
 5. Click **"Create repository"**
-6. Clone **your new repository** to your computer — not this one
 
-### 2. Clone and install
+### Step 2 — Clone your repository and install
+
+Clone **your new repository** — not this template.
 
 ```bash
 git clone https://github.com/your-username/your-repo-name
@@ -44,38 +45,52 @@ cd your-repo-name
 npm install
 ```
 
-### 3. Configure your environment
+### Step 3 — Run the app
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173`. The app will run immediately — navigation works, all routes render. Pages that need WordPress will show a setup message telling you exactly what to do next. You do not need WordPress running to get this far.
+
+### Step 4 — Set up WordPress locally
+
+Install [LocalWP](https://localwp.com) (free) and create a new site. Once it is running you will have a local URL like `http://your-site.local`.
+
+You do not need any plugins at this stage. The default WordPress install is enough to see blog posts and pages in the React app.
+
+### Step 5 — Configure your environment
 
 ```bash
 cp .env.example .env
 ```
 
-Open `.env` and update with your LocalWP WordPress URL and CPT slug:
+Open `.env` and update both values:
 
 ```
 VITE_WP_API_URL=http://your-site.local/wp-json/wp/v2
 VITE_CPT_SLUG=your-cpt-slug
 ```
 
-The CPT slug must match exactly what you registered in WordPress.
+`VITE_CPT_SLUG` must match the slug you register in WordPress exactly. You can leave it as a placeholder until you have created your Custom Post Type.
 
-### 4. Start the development server
+### Step 6 — Restart the dev server and verify
+
+Stop the dev server (`Ctrl+C`) and start it again:
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:5173` in your browser.
+Visit `http://localhost:5173/blog` — you should see the Hello World post from your WordPress site. If you see an error message instead, it will tell you what to check.
 
-### 5. Connect to your WordPress
+You can also verify your WordPress API directly in the browser:
 
-Your WordPress site must have CORS configured to allow requests from `http://localhost:5173`. See the assignment specification for CORS setup options.
-
-Test your API is working by visiting:
 ```
 http://your-site.local/wp-json/wp/v2/posts
 ```
-You should see JSON data. If not, fix WordPress first before touching React.
+
+If that returns JSON, WordPress is working. If the React app still shows an error, double-check your `.env` URL matches exactly.
 
 ## Project structure
 
