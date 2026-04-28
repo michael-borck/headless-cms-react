@@ -154,6 +154,15 @@ a:hover {
   background: #fdf6ec;
 }
 
+.api-error--setup {
+  border-left-color: #2980b9;
+  background: #eaf4fb;
+}
+
+.api-error--setup h2 {
+  color: #2980b9;
+}
+
 .api-error h2 {
   margin: 0 0 var(--spacing-sm);
   font-size: 1.1rem;

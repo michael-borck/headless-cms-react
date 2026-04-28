@@ -1,7 +1,44 @@
 // ApiError — distinguishes between "WordPress not reachable" and other API errors.
 // Use this instead of a raw <p className="error"> whenever a fetch fails.
 
+const API_URL = import.meta.env.VITE_WP_API_URL
+const CPT_SLUG = import.meta.env.VITE_CPT_SLUG
+
+const PLACEHOLDER_URL = 'http://your-site.local/wp-json/wp/v2'
+const PLACEHOLDER_CPT = 'your-cpt-slug'
+
 function ApiError({ error, context = 'content' }) {
+  const isUnconfiguredUrl = !API_URL || API_URL === PLACEHOLDER_URL
+  const isUnconfiguredCpt = !CPT_SLUG || CPT_SLUG === PLACEHOLDER_CPT
+
+  if (isUnconfiguredUrl) {
+    return (
+      <div className="api-error api-error--setup">
+        <h2>WordPress URL not configured</h2>
+        <p>Your <code>.env</code> file is missing or hasn't been updated yet.</p>
+        <ol>
+          <li>Copy <code>.env.example</code> to <code>.env</code></li>
+          <li>Replace <code>your-site.local</code> with your actual LocalWP site URL</li>
+          <li>Restart the dev server (<code>npm run dev</code>)</li>
+        </ol>
+      </div>
+    )
+  }
+
+  if (isUnconfiguredCpt && context.toLowerCase().includes('custom post type')) {
+    return (
+      <div className="api-error api-error--setup">
+        <h2>Custom Post Type slug not configured</h2>
+        <p><code>VITE_CPT_SLUG</code> in your <code>.env</code> is still set to the placeholder value.</p>
+        <ol>
+          <li>Open <code>.env</code></li>
+          <li>Set <code>VITE_CPT_SLUG</code> to the slug you registered in WordPress (e.g. <code>menu-items</code>)</li>
+          <li>Restart the dev server (<code>npm run dev</code>)</li>
+        </ol>
+      </div>
+    )
+  }
+
   const isNetworkError =
     error?.name === 'TypeError' || error?.message?.toLowerCase().includes('failed to fetch')
 
