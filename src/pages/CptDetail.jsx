@@ -8,6 +8,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import ApiError from '../components/ApiError'
 
 const API = import.meta.env.VITE_WP_API_URL
 const CPT = import.meta.env.VITE_CPT_SLUG
@@ -36,7 +37,7 @@ function CptDetail() {
   }, [id])
 
   if (loading) return <p className="loading">Loading...</p>
-  if (error) return <p className="error">Error: {error}</p>
+  if (error) return <ApiError error={error} context="custom post type entry" />
   if (!item) return <p className="error">Item not found.</p>
 
   const featuredImage = item._embedded?.['wp:featuredmedia']?.[0]?.source_url

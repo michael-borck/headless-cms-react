@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import ApiError from '../components/ApiError'
 
 const API = import.meta.env.VITE_WP_API_URL
 
@@ -30,7 +31,7 @@ function SinglePost() {
   }, [id])
 
   if (loading) return <p className="loading">Loading post...</p>
-  if (error) return <p className="error">Error: {error}</p>
+  if (error) return <ApiError error={error} context="post" />
   if (!post) return <p className="error">Post not found.</p>
 
   const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url

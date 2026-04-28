@@ -10,6 +10,7 @@
 
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ApiError from '../components/ApiError'
 
 const API = import.meta.env.VITE_WP_API_URL
 const CPT = import.meta.env.VITE_CPT_SLUG
@@ -37,7 +38,7 @@ function CptList() {
   }, [])
 
   if (loading) return <p className="loading">Loading...</p>
-  if (error) return <p className="error">Error: {error}</p>
+  if (error) return <ApiError error={error} context="custom post type" />
 
   return (
     <section>
